@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Your Name</title>
+    <!-- Your existing Google Fonts and CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p><strong>Your Name</strong></p>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="changelog.html" aria-current="page">Changelog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Changelog Component Wrapper -->
+            <div class="changelog-wrapper">
+                <div class="changelog-header">
+                    <h1>Changelog</h1>
+                    <p>Here's everything we have shipped in the past few days</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-09-03">September 3, 2024</time>
+                        <div class="timeline-content">
+                            <p>Announcing Projects on Frontend Roadmap</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 2 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-28">August 28, 2024</time>
+                        <div class="timeline-content">
+                            <p>Build your learning habits with learning streaks</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-25">August 25, 2024</time>
+                        <div class="timeline-content">
+                            <p>Git and GitHub Roadmap</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 4 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-22">August 22, 2024</time>
+                        <div class="timeline-content">
+                            <p>Submit your project solution and get feedback</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 5 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-15">August 15, 2024</time>
+                        <div class="timeline-content">
+                            <p>Backend Project Ideas</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 6 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-10">August 10, 2024</time>
+                        <div class="timeline-content">
+                            <p>Redis roadmap</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 7 -->
+                    <article class="timeline-item">
+                        <time datetime="2024-08-01">August 1, 2024</time>
+                        <div class="timeline-content">
+                            <p>Changelog page to help you stay in the loop</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Button -->
+                <div class="changelog-footer">
+                    <a href="#" class="btn-primary">Visit Complete Changelog</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore my frontend development projects.">
+    <meta name="author" content="Your Name">
+
+    <meta property="og:title" content="My Projects">
+    <meta property="og:description" content="Explore my completed projects.">
+    <meta property="og:type" content="website">
+
+     <!-- Add Google Fonts (Bonus) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Link to your CSS -->
+<link rel="stylesheet" href="style.css">
+
+    <title>Projects | Your Name</title>
+</head>
+<div class="container">
+<body>
+
+    <header>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+        <h2>Your Name</h2>
+
+        <nav>
+            <a href="index.html">Home</a> /
+            <a href="projects.html">Projects</a> /
+            <a href="articles.html">Articles</a> /
+<<<<<<< HEAD
+            <a href="contact.html">Contact</a> /
+            <a href="changelog.html">Changelog</a>
+=======
+            <a href="contact.html">Contact</a>
+>>>>>>> 1231db2c7ce6e19568f30ae275e40d7857f11257
+        </nav>
+    </header>
+
+    <main>
+        <h1>My Projects</h1>
+
+        <section>
+            <article>
+                <h2>HTML Only Portfolio</h2>
+                <p>A personal portfolio website built using HTML.</p>
+            </article>
+
+            <article>
+                <h2>Calculator</h2>
+                <p>A simple calculator project.</p>
+            </article>
+
+            <article>
+                <h2>Quiz App</h2>
+                <p>A quiz application for testing knowledge.</p>
+            </article>
+
+            <article>
+                <h2>Countdown Timer</h2>
+                <p>A project that displays a countdown.</p>
+            </article>
+
+            <article>
+                <h2>Product Upcoming Page</h2>
+                <p>A page introducing an upcoming product.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+<script>
+    // Check for saved user preference, if any, on load of the website
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+
+    // Optional: Create a button to toggle it
+    // You can add a button in your header with id="theme-toggle"
+    const toggleBtn = document.getElementById('theme-toggle');
+    if(toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+</script>
+</body>
+</div>
+</html>

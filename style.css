@@ -1,0 +1,458 @@
+/* --- 1. CSS Variables & Dark Mode --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --accent-color: #0066cc; /* Link color */
+    --card-bg: #f9f9f9;
+    --font-main: 'Fira Sans', sans-serif; /* Google Font */
+    --font-heading: 'Fira Code', monospace; /* Google Font */
+}
+
+/* Bonus: Dark Mode support */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --border-color: #e0e0e0;
+    --accent-color: #66b2ff;
+    --card-bg: #1e1e1e;
+}
+
+/* --- 2. Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* --- 3. Main Layout (The Boxed Look) --- */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    box-shadow: 5px 5px 0px var(--border-color); /* Optional: Adds a slight brutalist shadow */
+}
+
+/* --- 4. Header & Navigation --- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+    text-align: center;
+}
+
+header p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* --- 5. Main Content Area --- */
+main {
+    padding: 20px;
+}
+
+/* Homepage specific layout (Grid) */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+section {
+    padding: 20px;
+    border: 2px solid var(--border-color);
+}
+
+/* Remove borders from nested sections to avoid double borders */
+section section {
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 15px 0;
+}
+
+section section:last-child {
+    border-bottom: none;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.intro p {
+    color: #666; /* Slightly muted */
+}
+
+/* Projects List (Homepage) */
+.projects-list li {
+    border: 2px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: var(--card-bg);
+}
+
+/* Work Experience & Education */
+article {
+    margin-bottom: 15px;
+}
+
+article h3 {
+    margin-bottom: 5px;
+}
+
+/* --- 6. Reviews Section --- */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+blockquote {
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    font-style: italic;
+}
+
+blockquote + p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    padding-left: 10px;
+}
+
+/* --- 7. Forms (Contact Page) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+button {
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-heading);
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* --- 8. Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--border-color);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+}
+
+/* --- 9. Responsive Design (Media Queries) --- */
+
+/* Desktop Layout (The right side of your mockup) */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+
+    header p {
+        margin-bottom: 0;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 Columns */
+        gap: 0; /* Remove gap to connect borders */
+    }
+
+    /* Make the first section (Projects) span 1 column, Work Exp 1, Education 1 */
+    .home-grid > section {
+        border: none;
+        border-right: 2px solid var(--border-color);
+    }
+    
+    .home-grid > section:last-child {
+        border-right: none;
+    }
+
+    /* The Reviews section spans full width below */
+    .reviews-section {
+        grid-column: 1 / -1;
+        border-top: 2px solid var(--border-color);
+    }
+
+    .reviews-container {
+        flex-direction: row;
+    }
+
+    .reviews-container article {
+        flex: 1;
+    }
+
+    /* Projects list on desktop */
+    .projects-list li {
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 0;
+        background: transparent;
+    }
+    .projects-list li:last-child {
+        border-bottom: none;
+    }
+<<<<<<< HEAD
+}
+
+/* --- 11. Changelog Timeline Component --- */
+
+.changelog-wrapper {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.changelog-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.changelog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.changelog-header p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* The main timeline container */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between each update */
+}
+
+/* Individual Timeline Item */
+.timeline-item {
+    display: flex;
+    justify-content: flex-end; /* Push content to the right */
+    align-items: center;
+    position: relative;
+    width: 50%; /* Take up the left half */
+    padding-right: 30px; /* Space between text and the line */
+    text-align: right;
+}
+
+/* The Date Text */
+.timeline-item time {
+    font-size: 1rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* The Content Box (Right side) */
+.timeline-content {
+    position: absolute;
+    left: calc(100% + 30px); /* Push it past the middle line */
+    width: calc(100% - 30px); /* Fill the remaining right side */
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* 
+  THE MAGIC: The vertical line and the dot
+*/
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    /* Center the line perfectly */
+    right: -6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* The Dot */
+    width: 12px;
+    height: 12px;
+    background-color: var(--text-color); /* Adapts to dark mode */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* The Vertical Line connecting them (using a pseudo element on the container) */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: var(--text-color); /* Adapts to dark mode */
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* The Button at the bottom */
+.changelog-footer {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+    text-decoration: none;
+}
+
+/* Dark mode adjustment for the button */
+[data-theme="dark"] .btn-primary {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 767px) {
+    .changelog-wrapper {
+        padding: 10px;
+    }
+
+    .changelog-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* On mobile, we collapse the timeline */
+    .timeline::before {
+        left: 15px; /* Move line to the left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px; /* Space for the line */
+        padding-right: 0;
+        text-align: left;
+        gap: 5px;
+    }
+
+    /* Move the dot to the left */
+    .timeline-item::after {
+        left: 9px;
+        right: auto;
+        top: 25px; /* Align with the date */
+    }
+
+    /* Reset the content box so it flows normally */
+    .timeline-content {
+        position: static;
+        width: 100%;
+        text-align: left;
+        margin-top: 5px;
+    }
+=======
+>>>>>>> 1231db2c7ce6e19568f30ae275e40d7857f11257
+}

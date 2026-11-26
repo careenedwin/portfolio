@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Welcome to my personal website. Explore my projects, work experience and education.">
+    <meta name="author" content="Your Name">
+
+    <meta property="og:title" content="Your Name - Frontend Developer">
+    <meta property="og:description" content="My personal portfolio website.">
+    <meta property="og:type" content="website">
+
+    <!-- Add Google Fonts (Bonus) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Link to your CSS -->
+<link rel="stylesheet" href="style.css">
+
+    <title>Homepage | Your Name</title>
+</head>
+<div class="container">
+<body>
+
+    <header>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+        <h2>Your Name</h2>
+
+        <nav>
+            <a href="index.html">Home</a> /
+            <a href="projects.html">Projects</a> /
+            <a href="articles.html">Articles</a> /
+<<<<<<< HEAD
+            <a href="contact.html">Contact</a> /
+            <a href="changelog.html">Changelog</a>
+=======
+            <a href="contact.html">Contact</a>
+>>>>>>> 1231db2c7ce6e19568f30ae275e40d7857f11257
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Frontend Developer</h1>
+            <p>HTML only with proper layout, no styling.</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Projects</h2>
+                <ul>
+                    <li><a href="projects.html">HTML Only Portfolio</a></li>
+                    <li><a href="projects.html">Calculator</a></li>
+                    <li><a href="projects.html">Quiz App</a></li>
+                    <li><a href="projects.html">Countdown Timer</a></li>
+                    <li><a href="projects.html">Product Upcoming Page</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+
+                <article>
+                    <h3>roadmap.sh</h3>
+                    <p>Solved all the frontend projects.</p>
+                    <a href="https://roadmap.sh/">Visit my Profile</a>
+                </article>
+
+                <article>
+                    <h3>OpenSource Work</h3>
+                    <p>Contributed to 50 open-source projects.</p>
+                    <a href="https://github.com/careenedwin">Visit my GitHub Profile</a>
+                </article>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <p>Graduated with a 3.76 out of 4 CGPA. Won Acme Hackathon. Organized 30 sessions.</p>
+
+                <h3>Courses I took:</h3>
+                <ul>
+                    <li>Object Oriented Programming</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>Web Engineering</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Human Computer Interaction</li>
+                    <li>Computer Graphics</li>
+                    <li>Database Management Systems</li>
+                    <li>Distributed Database Systems</li>
+                    <li>Discrete Mathematics</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h2>Reviews from my Teachers</h2>
+
+            <article>
+                <blockquote>
+                    John Doe was a brilliant student; always stood out with his assignments.
+                </blockquote>
+                <p>Jane Doe<br>Assistant Professor</p>
+            </article>
+
+            <article>
+                <blockquote>
+                    John Doe was a brilliant student; always stood out with his assignments.
+                </blockquote>
+                <p>Jane Doe<br>Assistant Professor</p>
+            </article>
+
+            <article>
+                <blockquote>
+                    John Doe was a brilliant student; always stood out with his assignments.
+                </blockquote>
+                <p>Jane Doe<br>Assistant Professor</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+<script>
+    // Check for saved user preference, if any, on load of the website
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+
+    // Optional: Create a button to toggle it
+    // You can add a button in your header with id="theme-toggle"
+    const toggleBtn = document.getElementById('theme-toggle');
+    if(toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+</script>
+</body>
+</div>
+</html>
